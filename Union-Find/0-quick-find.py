@@ -13,10 +13,3 @@ class UnionFind(object):
         for id, group in enumerate(self.objects):
             if group == group1:
                 self.objects[id] = group2
-
-a = UnionFind(10)
-a.union(1,2)
-a.union(7,8)
-a.union(1,8)
-
-print(a.connected(1, 7))
