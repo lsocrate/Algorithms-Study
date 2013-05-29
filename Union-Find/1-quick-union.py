@@ -21,6 +21,7 @@ class UnionFind(object):
 
     def _root(self, id):
         while id is not self.objects[id]:
+            self.objects[id] = self.objects[self.objects[id]]
             id = self.objects[id]
 
         return id
