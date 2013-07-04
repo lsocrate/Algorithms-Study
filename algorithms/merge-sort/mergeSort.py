@@ -21,11 +21,15 @@ class MergeSort(object):
         return (numbers[0:divider], numbers[divider:])
 
     def sort(self, numbers):
-        if len(numbers) < 3:
+        if len(numbers) is 2:
             return self.merge([numbers[0]], [numbers[1]])
-        else:
-            divided = self.divide(numbers)
-            sortedDivided = (self.sort(divided[0]), self.sort(divided[1]))
-            merged = self.merge(sortedDivided[0], sortedDivided[1])
+        if len(numbers) is 3:
+            oddElement = numbers.pop()
+            firstMerged = self.merge([numbers[0]], [numbers[1]])
+            return self.merge(firstMerged, [oddElement])
 
-            return merged
+        divided = self.divide(numbers)
+        sortedDivided = (self.sort(divided[0]), self.sort(divided[1]))
+        merged = self.merge(sortedDivided[0], sortedDivided[1])
+
+        return merged
