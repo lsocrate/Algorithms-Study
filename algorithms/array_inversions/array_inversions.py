@@ -5,4 +5,10 @@ class ArrayInversions(object):
         self.array = array
 
     def inversions(self):
-        pass
+        inversions = 0
+        for (i, a) in enumerate(self.array):
+            for b in self.array[i+1:]:
+                if a > b:
+                    inversions += 1
+
+        return inversions
