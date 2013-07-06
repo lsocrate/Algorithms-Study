@@ -24,12 +24,12 @@ class MergeSort(object):
         if len(numbers) is 2:
             return self.merge([numbers[0]], [numbers[1]])
         if len(numbers) is 3:
-            oddElement = numbers.pop()
-            firstMerged = self.merge([numbers[0]], [numbers[1]])
-            return self.merge(firstMerged, [oddElement])
+            odd_element = numbers.pop()
+            first_merged = self.merge([numbers[0]], [numbers[1]])
+            return self.merge(first_merged, [odd_element])
 
         divided = self.divide(numbers)
-        sortedDivided = (self.sort(divided[0]), self.sort(divided[1]))
-        merged = self.merge(sortedDivided[0], sortedDivided[1])
+        sorted_divided = (self.sort(divided[0]), self.sort(divided[1]))
+        merged = self.merge(sorted_divided[0], sorted_divided[1])
 
         return merged
